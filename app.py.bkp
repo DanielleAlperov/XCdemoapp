@@ -84,14 +84,6 @@ def logout():
     session.clear()  # Clears all session data
     return redirect(url_for('login'))
 
-@app.route('/headers', methods=['GET'])
-def headers_page():
-    return render_template('headers.html')
-
-@app.route('/headers-json', methods=['GET'])
-def headers_json():
-    return jsonify({key: value for key, value in request.headers.items()})
-
 # ====== API ROUTES ====== #
 
 def generate_fake_credit_card():
